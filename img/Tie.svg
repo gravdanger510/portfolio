@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="240px"
+	 height="240px" viewBox="0 0 240 240" enable-background="new 0 0 240 240" xml:space="preserve">
+<g id="Tie">
+	<polygon fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" points="88.502,44.981 148.529,44.981 
+		133.37,78.867 156.906,165.814 119.994,205.054 83.08,165.814 103.496,78.867 	"/>
+	
+		<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" x1="103.496" y1="78.867" x2="133.37" y2="78.867"/>
+	<circle fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" cx="119.993" cy="120.018" r="114.731"/>
+</g>
+<g id="Pin" display="none">
+	<polygon display="inline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" points="108.147,147.856 
+		118.962,189.788 130.682,147.856 	"/>
+	<polygon display="inline" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" points="79.183,58.831 
+		162.042,58.831 157.582,79.203 157.582,125.357 171.335,147.856 68.029,147.856 83.341,119.971 83.341,79.203 	"/>
+	
+		<circle display="inline" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" cx="119.869" cy="120.018" r="114.731"/>
+</g>
+<g id="Record" display="none">
+	
+		<circle display="inline" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" cx="120.043" cy="120.017" r="71.212"/>
+	
+		<circle display="inline" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" cx="120.043" cy="120.017" r="18.132"/>
+	<circle display="inline" fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" cx="120.043" cy="120.017" r="4.128"/>
+	<g display="inline">
+		<path fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" d="M67.703,110.75
+			c5.258-25.549,26.658-42.843,52.34-43.941"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" d="M84.593,112.971c0,0,2.361-13.294,12.462-21.463
+			c10.102-8.168,22.176-7.615,22.176-7.615"/>
+	</g>
+	<path display="inline" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" d="M174.857,130.469
+		c-4.172,25.604-27.045,43.94-52.341,43.94"/>
+	<path display="inline" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" d="M157.154,128.336
+		c0,0-1.81,14.027-12.462,21.463c-10.907,7.615-22.176,7.615-22.176,7.615"/>
+	
+		<circle display="inline" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" cx="120.044" cy="120.018" r="114.731"/>
+</g>
+</svg>

@@ -1,0 +1,92 @@
+{
+	"text": [
+		{
+			"id" : "Template",
+			"name" : "Project Template",
+			"category" : "Template, template",
+			"intro" : "Nulla tincidunt nulla dolor, a euismod lacus consectetur nec.",
+			"headlines":["This is the first headline", 
+						"This is the second headline"],
+			"copy":["This is the first block of text. Proin elit quam, feugiat quis sem eu, euismod feugiat lacus. Donec posuere sapien eu auctor lacinia.", 
+					"This is the second block of text. Proin elit quam, feugiat quis sem eu, euismod feugiat lacus. Donec posuere sapien eu auctor lacinia."]
+			
+		},
+		{
+			"id" : "fl",
+			"name" : "Business Card Holder",
+			"category" : "Interactive Print",
+			"intro" : "This project is an ongoing experiment I started in the spring of 2014. I wanted to re-examine the meaning of an interface and created a non-digital method to instruct a user to complete a task",
+			"headlines":["An interface on paper", 
+						"This is the second headline"],
+			"copy":["The experiment explores a user's ability to fold a piece of paper into a pre-determined shape (a business card holder in this case) with no instructions around the process, and without viewing the finished product.", 
+					"This is the second block of text. Proin elit quam, feugiat quis sem eu, euismod feugiat lacus. Donec posuere sapien eu auctor lacinia."]
+			
+		},
+		{
+			"id" : "dl",
+			"name" : "Data Defender Game",
+			"category" : "Ipad App",
+			"intro" : "Delloite needed a game so we built one for em",
+			"headlines":["Your Data Could be Attacked at Any Moment!", 
+						"Framer Prototype",
+						"Icons"],
+			"copy":["Users were asked to pick four specific threats to defend against. Then, users selected more specific countermeasures for each threat.", 
+					"When designing the first few screens, we wanted to make sure that users connected the four threats they chose with the four threats on the next page. I designed this interaction to help solidify that connection.",
+					"The icons used in this project were in part designed by Jessica Maher, and sourced from The Noun Project."]
+			
+		},
+		{
+			"id" : "dr",
+			"name" : "Draper Labs Site Design",
+			"category" : "Prototypes",
+			"intro" : "Draper Labs came to Tank Design in need of a new website. To help pitch our designs I built prototypes for each direction using Framer.js",
+			"headlines":["Throw that nav in a circle", 
+						"Framer Prototype",
+						"Icons"],
+			"copy":["Users were asked to pick four specific threats to defend against. Then, users selected more specific countermeasures for each threat.", 
+					"When designing the first few screens, we wanted to make sure that users connected the four threats they chose with the four threats on the next page. I designed this interaction to help solidify that connection.",
+					"The icons used in this project were in part designed by Jessica Maher, and sourced from The Noun Project."]
+			
+		},
+		{
+			"id" : "it",
+			"name" : "It's on You Campaign",
+			"category" : "Mobile App",
+			"intro" : "Draper Labs came to Tank Design in need of a new website. To help pitch our designs I built prototypes for each direction using Framer.js",
+			"headlines":["Throw that nav in a circle", 
+						"Framer Prototype",
+						"Icons"],
+			"copy":["Users were asked to pick four specific threats to defend against. Then, users selected more specific countermeasures for each threat.", 
+					"When designing the first few screens, we wanted to make sure that users connected the four threats they chose with the four threats on the next page. I designed this interaction to help solidify that connection.",
+					"The icons used in this project were in part designed by Jessica Maher, and sourced from The Noun Project."]
+			
+		},
+		{
+			"id" : "rt",
+			"name" : "Rotel Site Design",
+			"category" : "Desktop Site",
+			"intro" : "Draper Labs came to Tank Design in need of a new website. To help pitch our designs I built prototypes for each direction using Framer.js",
+			"headlines":["Throw that nav in a circle", 
+						"Framer Prototype",
+						"Icons"],
+			"copy":["Users were asked to pick four specific threats to defend against. Then, users selected more specific countermeasures for each threat.", 
+					"When designing the first few screens, we wanted to make sure that users connected the four threats they chose with the four threats on the next page. I designed this interaction to help solidify that connection.",
+					"The icons used in this project were in part designed by Jessica Maher, and sourced from The Noun Project."]
+			
+		},
+		{
+			"id" : "nc",
+			"name" : "Snell Mobile Reservations",
+			"category" : "Mobile App",
+			"intro" : "Draper Labs came to Tank Design in need of a new website. To help pitch our designs I built prototypes for each direction using Framer.js",
+			"headlines":["Throw that nav in a circle", 
+						"Framer Prototype",
+						"Icons"],
+			"copy":["Users were asked to pick four specific threats to defend against. Then, users selected more specific countermeasures for each threat.", 
+					"When designing the first few screens, we wanted to make sure that users connected the four threats they chose with the four threats on the next page. I designed this interaction to help solidify that connection.",
+					"The icons used in this project were in part designed by Jessica Maher, and sourced from The Noun Project."]
+			
+		}
+		
+	]
+}

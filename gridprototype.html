@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grid Prototype</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<style type="text/css">
+	html, body, *{
+		margin: 0;
+		padding:0;
+	}
+	.square.big{
+		width:100%;
+		height:700px;
+		top:0;
+		left:0 !important;
+		z-index: 69;
+	}
+	.square{
+		width:33.33%;
+		height:300px;
+		position:absolute;
+		opacity:.8;
+		cursor:pointer;
+		top:300px;
+		z-index: 1;
+
+		transition: all 3s ease 0.0s;
+		-moz-transition: all 3s ease 0.0s;
+		-webkit-transition: all 3s ease 0.0s;
+		-o-transition: all 3s ease 0.0s;
+		-ms-transition: all 3s ease 0.0s;
+	}
+
+	.secondrow{
+		top:600px;
+	}
+	#one{
+		background-color: red;
+	}
+	#two{
+		background-color: orange;
+		left: 33.3%;
+	}
+	#three{
+		background-color: yellow;
+		left: 66.6%;
+	}
+	#four{
+		background-color: green;
+	}
+	#five{
+		background-color: blue;
+		left: 33.3%;
+	}
+	#six{
+		background-color: purple;
+		left: 66.6%;
+	}
+
+
+	</style>
+</head>
+<body>
+	<div class="square" id="one"></div>
+	<div class="square" id="two"></div>
+	<div class="square" id="three"></div>
+	<div class="square secondrow" id="four"></div>
+	<div class="square secondrow" id="five"></div>
+	<div class="square secondrow" id="six"></div>
+
+	<script type="text/javascript">
+		$('.square').click(function(){
+			//this shit's finna be big as FUCK
+			$(this).toggleClass('big');
+
+		});
+	</script>
+</body>
+</html>
