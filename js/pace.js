@@ -937,55 +937,25 @@
     }
   }
 //custom js from index php
-    var windowHeight;
-    $resizeErrythang = (function resizeErrythang(){
-      $windowHeight = $(window).height();
-      $windowHeight95 = $windowHeight*.95;
-      $windowWidth = $(window).width();
-      $ratio = $windowHeight/$windowWidth;
-      $thumbHeight = 300;
+    // var windowHeight;
+    // $resizeErrythang = (function resizeErrythang(){
+    //   $windowHeight = $(window).height();
+    //   $windowHeight95 = $windowHeight*.95;
+    //   $windowWidth = $(window).width();
+    //   $ratio = $windowHeight/$windowWidth;
+    //   $thumbHeight = 300;
       
-      switch($("#size-detector").css("background-color")){
-        //Oh man, I felt real clever for this
-        case "rgb(255, 0, 0)":
-          //SMALL
-          $(".closed").css("height", "300px");
-          $(".story").css("marginTop", 0);
-          $(".closed.first").css("top", $windowHeight95);
-          $(".closed.second").css("top", ($windowHeight95 + (300 * 1)));
-          $(".closed.third").css("top", ($windowHeight95 + (300 * 2)));
-          $(".closed.fourth").css("top", ($windowHeight95 + (300 * 3)));
-          $(".closed.fifth").css("top", ($windowHeight95 + (300 * 4)));
-          $(".closed.sixth").css("top", ($windowHeight95 + (300 * 5)));
-          break;
-        case "rgb(255, 165, 0)":
-          //MEDIUM
-          $(".closed").css("height", (($windowWidth/2) * $ratio));
-          $(".closed.first, .closed.second").css("top", $windowHeight95);
-          $(".closed.third, .closed.fourth").css("top", ($windowHeight95 + (($windowWidth/2) * $ratio)));
-          $(".closed.fifth, .closed.sixth").css("top", ($windowHeight95 + (($windowWidth/2) * $ratio) * 2));
-          break;
-        case "rgb(255, 255, 0)":
-          //LARGE
-          $(".closed").css("height", (($windowWidth/3) * $ratio));
-          $(".closed.first, .closed.second, .closed.third").css("top", $windowHeight95);
-          $(".closed.fourth, .closed.fifth, .closed.sixth").css("top", ($windowHeight95 + (($windowWidth/3) * $ratio)));
-          break;
-      }
-      $("#hello").css("height",($windowHeight95));
-      $(".main").css("height",$windowHeight);
-      $(".closed.open").css("height",$windowHeight);
       
-    });
+    // });
         
     $(function() {
 //      TYPER INIT
        $('[data-typer-targets]').typer();
 //      OPEN FUNCTIION
-      $resizeErrythang();
-      $(window).resize(function () {
-        $resizeErrythang();
-      });
+      // $resizeErrythang();
+      // $(window).resize(function () {
+      //   $resizeErrythang();
+      // });
       
       $('#hello .link').click(function(){
         $('#about').addClass('open');              
@@ -1021,13 +991,13 @@
           // If did not scroll past the document
           $('.x').removeClass('dark');
           }
-          if ($openStory.find(".back.close-bottom").offset().top > $(".thumb.open").offset().top + $windowHeight){
+          if ($openStory.find(".back.close-bottom").offset().top > $(".thumb.open").offset().top + $(window).height()){
             $openStory.find(".back.close-top").addClass("loaded");
             $('.pace-inactive').removeClass('pace-hidden');
           }
 
         }else{
-          if ($openStory.find(".back.close-bottom").offset().top <= $(".thumb.open").offset().top + $windowHeight){
+          if ($openStory.find(".back.close-bottom").offset().top <= $(".thumb.open").offset().top + $(window).height()){
             $openStory.find(".back.close-top").removeClass("loaded");
             $('.pace-inactive').addClass('pace-hidden');
           }
@@ -1047,20 +1017,17 @@
         if ($(e.target).hasClass("close-top")) {
           $this.find(".back.close-top").first().removeClass("loaded");
           $story.animate({
-            "marginTop":  -1 * $story.offset().top + $windowHeight
+            "marginTop": $(window).scrollTop() - $story.offset().top
           }, 700);
-          // $story.css("marginTop", -1 * $story.offset().top + $windowHeight); 
+          $(".intro").removeClass('loaded');
           $('.pace-inactive').addClass('pace-hidden');
 
           setTimeout(function(){
-            // $this.children("img").first().removeClass("fixed");
+            $this.removeAttr('style');
             $this.removeClass("open");
             $this.addClass("closed");
             $story.removeClass("open");
             $("body").removeClass("noScroll");
-            setTimeout(function(){
-              $resizeErrythang();
-            }, 1);
             setTimeout(function(){
               $story.html("");
             }, 200);
@@ -1071,21 +1038,21 @@
           }, 700);
           setTimeout(function(){
             $story.html("");
-            // $this.children("img").first().removeClass("fixed");
+            $this.removeAttr('style');
             $this.removeClass("open");
-            // $story.removeClass("open");
+            $this.addClass("closed");
             $("body").removeClass("noScroll");
-            $resizeErrythang();
-          
           }, 1000)
         }else {
+          // OPEN FUNCTION
           $('.story').removeClass('main');
           $('.thumb').removeClass('main');
+          $windowTop = $(window).scrollTop();
           
           $this.addClass('open');
           $this.removeClass('closed');
-          $(".thumb.open").css("top",$(window).scrollTop());
-          $(".thumb.open").css("height",$windowHeight);
+          $(".thumb.open").css("top",$windowTop);
+          // $(".thumb.open").css("height",$windowHeight);
           $story.removeAttr('style');
           $story.addClass('open');
           $("body").addClass("noScroll");
@@ -1093,7 +1060,7 @@
 
           setTimeout(function(){
               Pace.restart();
-              $this.children("img").first().addClass("fixed"),
+              // $this.children("img").first().addClass("fixed"),
               $story.load($storyPage);
               $.ajax({
                 url: $storyPage, success: function(result){

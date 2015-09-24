@@ -120,7 +120,7 @@ function makePrototype(){
 		echo('<div class="columns hide-for-small-only medium-1"><p></p></div>');
 		echo('<div class="columns small-12 medium-5">');
 			echo('<p>');
-				echo ("Sorry, this prototype isn't going to work on this screen size. Sorry about that. It's pretty cool though, and I'd highly reccommend checking out the site on a bigger screen!");
+				echo ("Unfortunately, this prototype isn't going to work on this screen size. Sorry about that. It's pretty cool though, and I'd highly reccommend checking out the site on a bigger screen!");
 			echo('</p>');
 			echo('</div>');
 		echo('<div class="columns hide-for-small-only medium-6"><p></p></div>');
