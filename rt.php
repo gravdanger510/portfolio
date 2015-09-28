@@ -6,6 +6,8 @@ makeText();
 makeFullImg();
 makeText();
 makePrototype();
+makeFullImg();
+makeFullImg();
 
 makeEnd();
 

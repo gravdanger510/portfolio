@@ -15,23 +15,25 @@
 			"id" : "fl",
 			"name" : "Business Card Holder",
 			"category" : "Interactive Print",
-			"intro" : "This project is an ongoing experiment I started in the spring of 2014. I wanted to re-examine the meaning of an interface and created a non-digital method to instruct a user to complete a task",
-			"headlines":["An interface on paper", 
-						"This is the second headline"],
+			"intro" : "This project is an ongoing experiment I started in the spring of 2014. I wanted to explore the meaning of an interface and created a non-digital method to instruct a user to complete a task",
+			"headlines":["An interface on paper",
+						"Business Card and Résumé upgrade",
+						"Want the PSD?"],
 			"copy":["The experiment explores a user's ability to fold a piece of paper into a pre-determined shape (a business card holder in this case) with no instructions around the process, and without viewing the finished product.", 
-					"This is the second block of text. Proin elit quam, feugiat quis sem eu, euismod feugiat lacus. Donec posuere sapien eu auctor lacinia."]
+					"I've also been playing around with the idea of using this as a networking tool. I created a version of this project with my résumé on it that can be folded into a business card.",
+					"Well <a href='Tyler_Mitchell_Folding.psd'>here it is!</a> If a PSD more than you need, feel free to use this<a href='Tyler_Mitchell_Folding.pdf' target='_blank'> blank PDF</a>"]
 			
 		},
 		{
 			"id" : "dl",
 			"name" : "Data Defender Game",
 			"category" : "Ipad App",
-			"intro" : "Delloite needed a game so we built one for em",
+			"intro" : "Delloite asked Tank Design to build an iPad game for an event on cyber security",
 			"headlines":["Your Data Could be Attacked at Any Moment!", 
 						"Framer Prototype",
 						"Icons"],
 			"copy":["Users were asked to pick four specific threats to defend against. Then, users selected more specific countermeasures for each threat.", 
-					"When designing the first few screens, we wanted to make sure that users connected the four threats they chose with the four threats on the next page. I designed this interaction to help solidify that connection.",
+					"When designing the first few screens, we wanted to make sure that users connected the four threats they chose with the four threats on the next page. I designed this interaction to help solidify that connection. Click (Next) to see the next screen.",
 					"The icons used in this project were in part designed by Jessica Maher, and sourced from The Noun Project."]
 			
 		},
@@ -40,51 +42,41 @@
 			"name" : "Draper Labs Site Design",
 			"category" : "Prototypes",
 			"intro" : "Draper Labs came to Tank Design in need of a new website. To help pitch our designs I built prototypes for each direction using Framer.js",
-			"headlines":["Throw that nav in a circle", 
-						"Framer Prototype",
-						"Icons"],
-			"copy":["Users were asked to pick four specific threats to defend against. Then, users selected more specific countermeasures for each threat.", 
-					"When designing the first few screens, we wanted to make sure that users connected the four threats they chose with the four threats on the next page. I designed this interaction to help solidify that connection.",
-					"The icons used in this project were in part designed by Jessica Maher, and sourced from The Noun Project."]
+			"headlines":["Circular Navigation", 
+						"Split-scroll",
+						"Hidden CTAs"],
+			"copy":["This direction by Matt Giesting organizes Draper's capabilities and stories and highlighted the connections. Hover over and click on (Transform DBS/Subnets) to view the story and see how it connects to Draper's capabilities. This ended up being the chosen direction.", 
+					"This direction by Stuart Cannon uses awesome imagery to highlight Draper's featured stories. Click the down arrow to see the next story.",
+					"This direction by Andy Smiles places CTAs for each story behind the images. Hover over an image to reveal the CTA."]
 			
 		},
 		{
 			"id" : "it",
 			"name" : "It's on You Campaign",
 			"category" : "Mobile App",
-			"intro" : "Draper Labs came to Tank Design in need of a new website. To help pitch our designs I built prototypes for each direction using Framer.js",
-			"headlines":["Throw that nav in a circle", 
-						"Framer Prototype",
-						"Icons"],
-			"copy":["Users were asked to pick four specific threats to defend against. Then, users selected more specific countermeasures for each threat.", 
-					"When designing the first few screens, we wanted to make sure that users connected the four threats they chose with the four threats on the next page. I designed this interaction to help solidify that connection.",
-					"The icons used in this project were in part designed by Jessica Maher, and sourced from The Noun Project."]
+			"intro" : "I designed an app for a campaign against drunk driving.",
+			"headlines":["If you're not driving, you're still responsible"],
+			"copy":["It's On You is a response to current anti drunk driving efforts. Instead of targeting a potential driver, I focused on creating a network of friends looking out for each other. This app allows you to call a cab for a friend who is too drunk to drive home."]
 			
 		},
 		{
 			"id" : "rt",
 			"name" : "Rotel Site Design",
 			"category" : "Desktop Site",
-			"intro" : "Draper Labs came to Tank Design in need of a new website. To help pitch our designs I built prototypes for each direction using Framer.js",
-			"headlines":["Throw that nav in a circle", 
-						"Framer Prototype",
-						"Icons"],
-			"copy":["Users were asked to pick four specific threats to defend against. Then, users selected more specific countermeasures for each threat.", 
-					"When designing the first few screens, we wanted to make sure that users connected the four threats they chose with the four threats on the next page. I designed this interaction to help solidify that connection.",
-					"The icons used in this project were in part designed by Jessica Maher, and sourced from The Noun Project."]
+			"intro" : "Audio Engineering company Rotel asked Tank Design to redo their website.",
+			"headlines":["A fresh approach", 
+						"Framer Prototype"],
+			"copy":["Rotel wanted to appeal to a younger audience. To attract this audience, my design separates itself from most websites by splitting itself in half vertically.", 
+					"I prototyped this scrolling behavior in Framer js to better communicate my concept. This project launched my interest in interaction prototyping. Scroll the right side of the page, click on the menu, and click on the product categories to explore the site."]
 			
 		},
 		{
 			"id" : "nc",
 			"name" : "Snell Mobile Reservations",
 			"category" : "Mobile App",
-			"intro" : "Draper Labs came to Tank Design in need of a new website. To help pitch our designs I built prototypes for each direction using Framer.js",
-			"headlines":["Throw that nav in a circle", 
-						"Framer Prototype",
-						"Icons"],
-			"copy":["Users were asked to pick four specific threats to defend against. Then, users selected more specific countermeasures for each threat.", 
-					"When designing the first few screens, we wanted to make sure that users connected the four threats they chose with the four threats on the next page. I designed this interaction to help solidify that connection.",
-					"The icons used in this project were in part designed by Jessica Maher, and sourced from The Noun Project."]
+			"intro" : "While working with Northeastern Create, we desgined and concepted a new mobile experience for Northeastern's Snell Library.",
+			"headlines":["Out with the old"],
+			"copy":["Snell's group reservation was a pain point for students everyday. Knowing most students access campus sites on their phones, we deisgned a new group reservation system."]
 			
 		}
 		

@@ -1,13 +1,13 @@
 <?php 
 include('components.php');
-$projectname = "Template";
+$projectname = "fl";
 makeIntro();
 makeText();
 makeFullImg();
 makeFullImg();
 makeText();
 makeFullImg();
-makeHalfImg();
+makeText();
 makeEnd();
 
 ?>

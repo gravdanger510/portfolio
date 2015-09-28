@@ -956,6 +956,11 @@
       // $(window).resize(function () {
       //   $resizeErrythang();
       // });
+          $(window).resize(function () {
+            if($('.thumb').hasClass('open')){
+              $(".thumb.open").css("top",$(window).scrollTop());
+            }
+          });
       
       $('#hello .link').click(function(){
         $('#about').addClass('open');              
@@ -1045,38 +1050,43 @@
           }, 1000)
         }else {
           // OPEN FUNCTION
-          $('.story').removeClass('main');
-          $('.thumb').removeClass('main');
-          $windowTop = $(window).scrollTop();
-          
-          $this.addClass('open');
-          $this.removeClass('closed');
-          $(".thumb.open").css("top",$windowTop);
-          // $(".thumb.open").css("height",$windowHeight);
-          $story.removeAttr('style');
-          $story.addClass('open');
-          $("body").addClass("noScroll");
-          $openStory = $(".thumb.open").find(".story");
+          if ($('.thumb').hasClass('open')) {
+              //DON'T DO NOTHIN CAUSE ITS ARLEADY OPEN!
+              // alert("Its open!");
+          }else{
+            $('.story').removeClass('main');
+            $('.thumb').removeClass('main');
+            $windowTop = $(window).scrollTop();
+            
+            $this.addClass('open');
+            $this.removeClass('closed');
+            $(".thumb.open").css("top",$windowTop);
+            // $(".thumb.open").css("height",$windowHeight);
+            $story.removeAttr('style');
+            $story.addClass('open');
+            $("body").addClass("noScroll");
+            $openStory = $(".thumb.open").find(".story");
 
-          setTimeout(function(){
-              Pace.restart();
-              // $this.children("img").first().addClass("fixed"),
-              $story.load($storyPage);
-              $.ajax({
-                url: $storyPage, success: function(result){
-                  $story.html(result);
-                  $(document).ajaxComplete(function(){
-                    setTimeout(function(){
-                      bar.finish();
-                      $this.find(".back.close-top").first().addClass("loaded");
-                      $this.find(".intro").first().addClass("loaded");
-                    }, 2000)
-                  })
-                }
-              });
+            setTimeout(function(){
+                Pace.restart();
+                // $this.children("img").first().addClass("fixed"),
+                $story.load($storyPage);
+                $.ajax({
+                  url: $storyPage, success: function(result){
+                    $story.html(result);
+                    $(document).ajaxComplete(function(){
+                      setTimeout(function(){
+                        bar.finish();
+                        $this.find(".back.close-top").first().addClass("loaded");
+                        $this.find(".intro").first().addClass("loaded");
+                      }, 2000)
+                    })
+                  }
+                });
 
-          }, 1000)
-          
+            }, 1000)
+            
+          }
         }
       });
     });
