@@ -130,6 +130,15 @@ function makePrototype(){
 		echo('<div class="columns small-12 medium-10"><iframe src="');
 			echo($filepath);
 		echo('"></iframe></div>');
+		// echo ('<div class="row prototype show-for-large-up">');
+		// echo('<div class="columns hide-for-small-only medium-1"><p></p></div>');
+		// echo('<div class="columns small-12 medium-10">');
+		// 	echo ('<iframe src="');
+		// 	echo($filepath);
+		// echo('"></iframe>');
+		// echo ('<a class="iframeLink" target="_blank" href="');
+		// echo ($filepath );
+		// echo ('">Launch in new tab</a></div>');
 		echo('<div class="columns hide-for-small-only medium-1"><p></p></div>');
 	echo ('</div>');
 

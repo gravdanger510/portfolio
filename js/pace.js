@@ -1012,6 +1012,19 @@
         }
         $lastScrollTop = $st;
       }
+      function disable_scroll()
+      {
+          $(".thumb.open").style.overflow="hidden";
+          cosonle.log("hiding scroll");
+      }
+
+      function enable_scroll()
+      {
+           $(".thumb.open").style.overflow="auto";
+           console.log("unhiding");
+      }
+      $("iframe").mouseover = disable_scroll;
+      $("iframe").mouseout = enable_scroll;
 
       $('.thumb').click(function (e) {
         var $this = $(this);
