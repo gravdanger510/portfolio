@@ -937,30 +937,16 @@
     }
   }
 //custom js from index php
-    // var windowHeight;
-    // $resizeErrythang = (function resizeErrythang(){
-    //   $windowHeight = $(window).height();
-    //   $windowHeight95 = $windowHeight*.95;
-    //   $windowWidth = $(window).width();
-    //   $ratio = $windowHeight/$windowWidth;
-    //   $thumbHeight = 300;
-      
-      
-    // });
-        
+
     $(function() {
 //      TYPER INIT
        $('[data-typer-targets]').typer();
 //      OPEN FUNCTIION
-      // $resizeErrythang();
-      // $(window).resize(function () {
-      //   $resizeErrythang();
-      // });
-          $(window).resize(function () {
-            if($('.thumb').hasClass('open')){
-              $(".thumb.open").css("top",$(window).scrollTop());
-            }
-          });
+          // $(window).resize(function () {
+          //   if($('.thumb').hasClass('open')){
+          //     $(".thumb.open").css("top",$(window).scrollTop());
+          //   }
+          // });
       
       $('#hello .link').click(function(){
         $('#about').addClass('open');              
@@ -978,10 +964,13 @@
       var $delta = 5;
       var $contentHeight = 500;
       var $openStory;
+      var $bodyTop = 0;
+      var $body = $("body");
       // on scroll, let the interval function know the user has scrolled
-      $(".thumb").scroll(function(){
-        $didScroll = true;
-      });
+      function scrollTrue(){
+         $didScroll = true;
+      }
+      $(".thumb").scroll(scrollTrue);
       setInterval(function(){
         if ($didScroll){
           hasScrolled();
@@ -993,7 +982,7 @@
         if($st > $lastScrollTop){
           if ($st >= ($contentHeight * -1) + $(".back").outerHeight()){
           // Scroll Up
-          // If did not scroll past the document
+          // If did not scroll past the docume(nt
           $('.x').removeClass('dark');
           }
           if ($openStory.find(".back.close-bottom").offset().top > $(".thumb.open").offset().top + $(window).height()){
@@ -1041,11 +1030,13 @@
           $('.pace-inactive').addClass('pace-hidden');
 
           setTimeout(function(){
-            $this.removeAttr('style');
             $this.removeClass("open");
             $this.addClass("closed");
+            $this.removeAttr('style');
             $story.removeClass("open");
-            $("body").removeClass("noScroll");
+            $body.removeClass("noScroll");
+            $body.removeAttr('style');
+            $body.scrollTop(-$bodyTop);
             setTimeout(function(){
               $story.html("");
             }, 200);
@@ -1059,7 +1050,9 @@
             $this.removeAttr('style');
             $this.removeClass("open");
             $this.addClass("closed");
-            $("body").removeClass("noScroll");
+            $body.removeClass("noScroll");
+            $body.removeAttr('style');
+            $body.scrollTop(-$bodyTop);
           }, 1000)
         }else {
           // OPEN FUNCTION
@@ -1067,17 +1060,25 @@
               //DON'T DO NOTHIN CAUSE ITS ARLEADY OPEN!
               // alert("Its open!");
           }else{
-            $('.story').removeClass('main');
-            $('.thumb').removeClass('main');
             $windowTop = $(window).scrollTop();
             
             $this.addClass('open');
             $this.removeClass('closed');
-            $(".thumb.open").css("top",$windowTop);
+            
             // $(".thumb.open").css("height",$windowHeight);
+            // if($windowTop == 0){
+            //   console.log("using body.offset().top cause its " + $body.offset().top + "and window.scrollTop is " + $windowTop);
+            //   $bodyTop = -$body.offset().top;
+            //   $(".thumb.open").css("top",$body.offset().top);
+            // }else{
+              // console.log("using window.scrollTop cause its " + $windowTop + "but body.offsetTop is " + $body.offset().top);
+              $bodyTop = -$windowTop;
+              $(".thumb.open").css("top", $windowTop);
+            // }
             $story.removeAttr('style');
             $story.addClass('open');
-            $("body").addClass("noScroll");
+            $body.addClass("noScroll");
+            $body.css("top", $bodyTop);
             $openStory = $(".thumb.open").find(".story");
 
             setTimeout(function(){
