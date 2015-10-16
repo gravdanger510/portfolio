@@ -942,19 +942,18 @@
 //      TYPER INIT
        $('[data-typer-targets]').typer();
 //      OPEN FUNCTIION
-          // $(window).resize(function () {
-          //   if($('.thumb').hasClass('open')){
-          //     $(".thumb.open").css("top",$(window).scrollTop());
-          //   }
-          // });
-      
+
       $('#hello .link').click(function(){
-        $('#about').addClass('open');              
+        $('#about').addClass('open'); 
+        $('#hello').addClass('noScroll'); 
+
         $('html, body').animate({
           scrollTop: $('#about').offset().top
         }, 1000);
         $('.close-about').click(function() {
           $('#about').removeClass('open');
+          $('#hello').removeClass('noScroll'); 
+
         });             
       });
 
@@ -966,13 +965,16 @@
       var $openStory;
       var $bodyTop = 0;
       var $body = $("body");
+      var $scrollHandlerEnabled = true;
+
+      var $closeTop = $('.back-row .close-top');
       // on scroll, let the interval function know the user has scrolled
       function scrollTrue(){
          $didScroll = true;
       }
       $(".thumb").scroll(scrollTrue);
       setInterval(function(){
-        if ($didScroll){
+        if ($didScroll && $scrollHandlerEnabled){
           hasScrolled();
           $didScroll = false;
         }
@@ -980,91 +982,90 @@
       function hasScrolled(){
         var $st = $openStory.offset().top - $(window).scrollTop();
         if($st > $lastScrollTop){
-          if ($st >= ($contentHeight * -1) + $(".back").outerHeight()){
+          if ($st >= ($contentHeight * -1) + $(".back-row").outerHeight()){
           // Scroll Up
           // If did not scroll past the docume(nt
           $('.x').removeClass('dark');
           }
           if ($openStory.find(".back.close-bottom").offset().top > $(".thumb.open").offset().top + $(window).height()){
-            $openStory.find(".back.close-top").addClass("loaded");
+            $(".back-row").addClass("loaded");
             $('.pace-inactive').removeClass('pace-hidden');
           }
-
         }else{
           if ($openStory.find(".back.close-bottom").offset().top <= $(".thumb.open").offset().top + $(window).height()){
-            $openStory.find(".back.close-top").removeClass("loaded");
+            $(".back-row").removeClass("loaded");
             $('.pace-inactive').addClass('pace-hidden');
           }
-          else if ($st < ($contentHeight * -1) + $(".back").outerHeight()){
+          else if ($st < ($contentHeight * -1) + $(".back-row").outerHeight()){
             $('.x').addClass('dark');
           }
         }
         $lastScrollTop = $st;
       }
-      function disable_scroll()
-      {
-          $(".thumb.open").style.overflow="hidden";
-          cosonle.log("hiding scroll");
-      }
+      // function disable_scroll()
+      // {
+      //     $(".thumb.open").style.overflowY="hidden";
+      //     console.log("hiding scroll");
+      // }
 
-      function enable_scroll()
-      {
-           $(".thumb.open").style.overflow="auto";
-           console.log("unhiding");
-      }
-      $("iframe").mouseover = disable_scroll;
-      $("iframe").mouseout = enable_scroll;
-
-      $('.thumb').click(function (e) {
-        var $this = $(this);
-        var $thisClass=($this.data('project'));
-        var $story=$this.find('.story');
-        var $storyPage = "" + $thisClass + ".php"
-//      CLOSE FUNCTION
-        if ($(e.target).hasClass("close-top")) {
-          $this.find(".back.close-top").first().removeClass("loaded");
-          $story.animate({
-            "marginTop": $(window).scrollTop() - $story.offset().top
+      // function enable_scroll()
+      // {
+      //      $(".thumb.open").style.overflowY="scroll";
+      //      console.log("unhiding");
+      // }
+      // $("iframe").mouseover = disable_scroll;
+      // $("iframe").mouseout = enable_scroll;
+      $closeTop.click(function(){
+        //Make sure the scroll function doesn't run
+        $scrollHandlerEnabled = false;
+        var $openThumb = $('.thumb.open');
+        var $story = $('.thumb.open .story');
+         $(".back-row").removeClass("loaded");
+          console.log($(window).scrollTop() - $story.offset().top); 
+          $openThumb.animate({
+            scrollTop:0
           }, 700);
+          $('.story.open .intro').removeClass("loaded");
           $(".intro").removeClass('loaded');
           $('.pace-inactive').addClass('pace-hidden');
 
           setTimeout(function(){
-            $this.removeClass("open");
-            $this.addClass("closed");
-            $this.removeAttr('style');
+            $openThumb.removeClass("open").addClass("closed").removeAttr('style');
             $story.removeClass("open");
-            $body.removeClass("noScroll");
-            $body.removeAttr('style');
-            $body.scrollTop(-$bodyTop);
+            $body.removeClass("noScroll").removeAttr('style').scrollTop(-$bodyTop);
             setTimeout(function(){
               $story.html("");
             }, 200);
           }, 1000)
-        }else if($(e.target).hasClass("close-bottom")) {
+      });
+
+      $('.thumb').click(function (e) {
+        var $this = $(this);
+        var $thisClass = ($this.data('project'));
+        var $story = $this.find('.story');
+        var $storyPage = "" + $thisClass + ".php"
+//      CLOSE FUNCTION
+        if($(e.target).hasClass("close-bottom")) {
+          //Make sure the scroll function doesn't run
+          $scrollHandlerEnabled = false;
           $story.animate({
             "marginTop": -$story.height()
           }, 700);
           setTimeout(function(){
             $story.html("");
-            $this.removeAttr('style');
-            $this.removeClass("open");
-            $this.addClass("closed");
-            $body.removeClass("noScroll");
-            $body.removeAttr('style');
-            $body.scrollTop(-$bodyTop);
+            $this.removeAttr('style').removeClass("open").addClass("closed");
+            $body.removeClass("noScroll").removeAttr('style').scrollTop(-$bodyTop);
           }, 1000)
         }else {
           // OPEN FUNCTION
+          $scrollHandlerEnabled = true;
           if ($('.thumb').hasClass('open')) {
               //DON'T DO NOTHIN CAUSE ITS ARLEADY OPEN!
               // alert("Its open!");
           }else{
             $windowTop = $(window).scrollTop();
-            
-            $this.addClass('open');
-            $this.removeClass('closed');
-            
+            $this.addClass('open').addClass('loading').removeClass('closed');
+
             // $(".thumb.open").css("height",$windowHeight);
             // if($windowTop == 0){
             //   console.log("using body.offset().top cause its " + $body.offset().top + "and window.scrollTop is " + $windowTop);
@@ -1085,15 +1086,19 @@
                 Pace.restart();
                 // $this.children("img").first().addClass("fixed"),
                 $story.load($storyPage);
+                // disable_scroll();
                 $.ajax({
                   url: $storyPage, success: function(result){
                     $story.html(result);
                     $(document).ajaxComplete(function(){
                       setTimeout(function(){
                         bar.finish();
-                        $this.find(".back.close-top").first().addClass("loaded");
+                        $(".back-row").addClass("loaded");
+
                         $this.find(".intro").first().addClass("loaded");
-                      }, 2000)
+                        $this.removeClass('loading');
+                        
+                      }, 1500)
                     })
                   }
                 });
@@ -1108,3 +1113,5 @@
 
 
 }).call(this);
+
+

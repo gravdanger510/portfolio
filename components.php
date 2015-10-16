@@ -20,16 +20,6 @@ function makeIntro() {
 		}
 	}
 
-	echo('<div class="row">');
-		echo('<div class="columns small-4 medium-5"><p></p></div>');
-		echo('<div class="columns small-4 medium-2 back fixed close-top">');
-			echo('<div class="x close-top">');
-				echo('<div class="lefthalf"></div>');
-				echo('<div class="righthalf"></div>');
-			echo('</div>');
-		echo('</div>');
-		echo('<div class="columns small-4 medium-5"><p></p></div>');
-	echo('</div>');
 	echo('<div class="row intro">');
 		echo('<div class="columns small-1 medium-3"><p></p></div>');
 		echo('<div class ="columns small-10 medium-6 block">');
