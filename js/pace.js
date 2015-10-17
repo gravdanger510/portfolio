@@ -937,6 +937,34 @@
     }
   }
 //custom js from index php
+// images Loaded function from:
+// http://stackoverflow.com/questions/4774746/jquery-ajax-wait-until-all-images-are-loaded
+$.fn.imagesLoaded = function () {
+
+    // Edit: in strict mode, the var keyword is needed
+    var $imgs = this.find('img[src!=""]');
+    // if there's no images, just return an already resolved promise
+    if (!$imgs.length) {return $.Deferred().resolve().promise();}
+
+    // for each image, add a deferred object to the array which resolves when the image is loaded (or if loading fails)
+    var dfds = [];  
+    $imgs.each(function(){
+
+        var dfd = $.Deferred();
+        dfds.push(dfd);
+        var img = new Image();
+        img.onload = function(){dfd.resolve();}
+        img.onerror = function(){dfd.resolve();}
+        img.src = this.src;
+        // console.log("now loading " + img.src);
+
+    });
+
+    // return a master promise object which will resolve when all the deferred objects have resolved
+    // IE - when all the images are loaded
+    return $.when.apply($,dfds);
+
+}
 
     $(function() {
 //      TYPER INIT
@@ -1058,7 +1086,7 @@
           }, 1000)
         }else {
           // OPEN FUNCTION
-          $scrollHandlerEnabled = true;
+          
           if ($('.thumb').hasClass('open')) {
               //DON'T DO NOTHIN CAUSE ITS ARLEADY OPEN!
               // alert("Its open!");
@@ -1085,21 +1113,27 @@
             setTimeout(function(){
                 Pace.restart();
                 // $this.children("img").first().addClass("fixed"),
-                $story.load($storyPage);
+                // $story.load($storyPage);
                 // disable_scroll();
+                $(".close-top").removeClass("dark");
                 $.ajax({
                   url: $storyPage, success: function(result){
                     $story.html(result);
-                    $(document).ajaxComplete(function(){
+                     $($openStory).html(result).imagesLoaded().then(function(){
+                        //do stuff after all of the images are loaded
+                        //honestly, i'm not super sure that this is working yet but #yologanggang
                       setTimeout(function(){
-                        bar.finish();
-                        $(".back-row").addClass("loaded");
+                      $scrollHandlerEnabled = true;
+                      bar.finish();
+                      $(".back-row").addClass("loaded");
 
-                        $this.find(".intro").first().addClass("loaded");
-                        $this.removeClass('loading');
-                        
-                      }, 1500)
-                    })
+                      $this.find(".intro").first().addClass("loaded");
+                      $this.removeClass('loading');
+                    
+                      }, 1200)
+
+                    });
+                    
                   }
                 });
 
