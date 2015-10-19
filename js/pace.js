@@ -1043,6 +1043,12 @@ $.fn.imagesLoaded = function () {
       // }
       // $("iframe").mouseover = disable_scroll;
       // $("iframe").mouseout = enable_scroll;
+      $('.reload').click(function(){
+        var $this = $(this);
+
+        $this.closest(iframe).hide();
+
+      })
       $closeTop.click(function(){
         //Make sure the scroll function doesn't run
         $scrollHandlerEnabled = false;

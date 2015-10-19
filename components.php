@@ -119,7 +119,28 @@ function makePrototype(){
 		echo('<div class="columns hide-for-small-only medium-1"><p></p></div>');
 		echo('<div class="columns small-12 medium-10"><iframe src="');
 			echo($filepath);
-		echo('"></iframe></div>');
+		echo('"></iframe>');
+		//icons
+			echo ('<div class="row icons show-for-large-up">');
+				echo('<div class="columns hide-for-small-only large-4"><p></p></div>');
+				echo('<div class="columns hide-for-small-only large-4">');
+					echo ('<div class="icon reload" data-source="');
+					echo ($filepath);
+					echo('">');
+						echo('<img src="reload.svg" alt="Reload Prototype">');
+					echo ('</div>');
+					echo ('<div class="icon info">');
+						echo('<img src="info.svg">');
+					echo ('</div>');
+					echo ('<a class="icon newTab" target="_blank" href="');
+					echo ($filepath);
+					echo ('">');
+						echo('<img src="newTab.svg" alt="Open in New Tab">');
+					echo ('</a>');
+				echo ('</div>');
+				echo('<div class="columns hide-for-small-only large-4"><p></p></div>');
+			echo ('</div>');//end icons row
+		echo('</div>');
 		// echo ('<div class="row prototype show-for-large-up">');
 		// echo('<div class="columns hide-for-small-only medium-1"><p></p></div>');
 		// echo('<div class="columns small-12 medium-10">');
@@ -130,7 +151,10 @@ function makePrototype(){
 		// echo ($filepath );
 		// echo ('">Launch in new tab</a></div>');
 		echo('<div class="columns hide-for-small-only medium-1"><p></p></div>');
-	echo ('</div>');
+		
+
+	echo ('</div>');//end prototype row
+	
 
 	$prototypecounter++;
 }
