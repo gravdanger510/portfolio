@@ -989,7 +989,7 @@ $.fn.imagesLoaded = function () {
       var $didScroll;
       var $lastScrollTop = 0;
       var $delta = 5;
-      var $contentHeight = 500;
+      var $contentHeight = 0;
       var $openStory;
       var $bodyTop = 0;
       var $body = $("body");
@@ -1010,7 +1010,7 @@ $.fn.imagesLoaded = function () {
       function hasScrolled(){
         var $st = $openStory.offset().top - $(window).scrollTop();
         if($st > $lastScrollTop){
-          if ($st >= ($contentHeight * -1) + $(".back-row").outerHeight()){
+          if ($st >= ($contentHeight * -1) + $(".close-top").outerHeight()){
           // Scroll Up
           // If did not scroll past the docume(nt
           $('.x').removeClass('dark');
@@ -1024,7 +1024,7 @@ $.fn.imagesLoaded = function () {
             $(".back-row").removeClass("loaded");
             $('.pace-inactive').addClass('pace-hidden');
           }
-          else if ($st < ($contentHeight * -1) + $(".back-row").outerHeight()){
+          else if ($st < ($contentHeight * -1) + $(".close-top").outerHeight()){
             $('.x').addClass('dark');
           }
         }
@@ -1043,12 +1043,12 @@ $.fn.imagesLoaded = function () {
       // }
       // $("iframe").mouseover = disable_scroll;
       // $("iframe").mouseout = enable_scroll;
-      $('.reload').click(function(){
-        var $this = $(this);
+      // $('.reload').click(function(){
+      //   var $this = $(this);
 
-        $this.closest(iframe).hide();
+      //   $this.closest(iframe).hide();
 
-      })
+      // })
       $closeTop.click(function(){
         //Make sure the scroll function doesn't run
         $scrollHandlerEnabled = false;
